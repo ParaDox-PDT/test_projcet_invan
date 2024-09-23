@@ -6,7 +6,7 @@ part of 'post_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class PostsModelAdapter extends TypeAdapter<PostModel> {
+class PostModelAdapter extends TypeAdapter<PostModel> {
   @override
   final int typeId = 2;
 
@@ -44,7 +44,7 @@ class PostsModelAdapter extends TypeAdapter<PostModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PostsModelAdapter &&
+      other is PostModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

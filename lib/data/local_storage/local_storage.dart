@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:test_projcet_invan/data/models/auth_user_model/auth_user_model.dart';
 import 'package:test_projcet_invan/data/models/post_model/post_model.dart';
 
@@ -28,3 +28,7 @@ final class LocaleStorage {
 
   UserModel? getCurrentUser() => box.get('currentUser');
 }
+
+HiveInterface hiveRegister() => Hive
+  ..registerAdapter(UserModelAdapter())
+  ..registerAdapter(PostModelAdapter());

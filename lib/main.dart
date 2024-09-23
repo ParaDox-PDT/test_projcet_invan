@@ -5,6 +5,7 @@ import 'package:test_projcet_invan/ui/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  hiveRegister();
   await initApp();
   runApp(const MainApp());
 }
