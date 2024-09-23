@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:test_projcet_invan/ui/auth_screen/auth_screen_part.dart';
 import 'package:test_projcet_invan/ui/home_screen/home_screen.dart';
-import 'package:test_projcet_invan/ui/splash_screen/splash_screen.dart';
+
+import 'splash_screen/splash_screen_part.dart';
+
 
 class RouteNames {
   static const String splashScreen = "/";
   static const String homeScreen = "/home";
-  static const String gameDetailScreen = "/game_detail";
-  static const String tutorialScreen = "/tutorial_screen";
+  static const String auth = "/auth";
 }
 
 class AppRoutes {
@@ -15,6 +17,10 @@ class AppRoutes {
       case RouteNames.homeScreen:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
+        );
+      case RouteNames.auth:
+        return MaterialPageRoute(
+          builder: (context) => const AuthScreen(),
         );
       case RouteNames.splashScreen:
         return MaterialPageRoute(

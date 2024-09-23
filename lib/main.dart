@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_projcet_invan/data/local_storage/local_storage.dart';
 import 'package:test_projcet_invan/data/services/injector_container.dart';
 import 'package:test_projcet_invan/ui/app_routes.dart';
 
@@ -7,6 +8,8 @@ void main() async {
   await initApp();
   runApp(const MainApp());
 }
+
+LocaleStorage localeStorage = sl<LocaleStorage>();
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
