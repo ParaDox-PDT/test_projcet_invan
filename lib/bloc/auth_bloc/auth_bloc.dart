@@ -15,10 +15,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   void _onRegister(AuthRegisterEvent event, Emitter<AuthState> emit) {
-    List<UserModel> users = localeStorage.getUsers() ?? [];
+    List<UserModel> users = localeStorage.getUsers()?.users ?? [];
     localeStorage.setCurrentUser(user: event.user);
     users.add(event.user);
-    localeStorage.setUsers(users: users);
+    localeStorage.setUsers(users: UserModelList(users: users));
     emit(state.copyWith(userModel: event.user));
   }
 

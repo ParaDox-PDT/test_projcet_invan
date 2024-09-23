@@ -3,7 +3,8 @@ import 'dart:convert';
 
 part 'post_model.g.dart';
 
-PostModel postsModelFromJson(String str) => PostModel.fromJson(json.decode(str));
+PostModel postsModelFromJson(String str) =>
+    PostModel.fromJson(json.decode(str));
 
 String postsModelToJson(PostModel data) => json.encode(data.toJson());
 
@@ -39,16 +40,26 @@ class PostModel {
       );
 
   factory PostModel.fromJson(Map<String, dynamic> json) => PostModel(
-    userId: json["userId"],
-    id: json["id"],
-    title: json["title"],
-    body: json["body"],
-  );
+        userId: json["userId"],
+        id: json["id"],
+        title: json["title"],
+        body: json["body"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "userId": userId,
-    "id": id,
-    "title": title,
-    "body": body,
-  };
+        "userId": userId,
+        "id": id,
+        "title": title,
+        "body": body,
+      };
+}
+
+@HiveType(typeId: 3)
+class PostModelList {
+  @HiveField(1)
+  final List<PostModel> posts;
+
+  PostModelList({
+    required this.posts,
+  });
 }

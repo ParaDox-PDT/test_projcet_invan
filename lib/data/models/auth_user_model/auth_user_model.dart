@@ -17,3 +17,11 @@ class UserModel {
     required this.email,
   });
 }
+
+@HiveType(typeId: 4)
+class UserModelList {
+  @HiveField(1)
+  final List<UserModel> users;
+
+  UserModelList({required this.users});
+}

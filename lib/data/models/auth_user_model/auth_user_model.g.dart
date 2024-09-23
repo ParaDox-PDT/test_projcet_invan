@@ -45,3 +45,37 @@ class UserModelAdapter extends TypeAdapter<UserModel> {
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
+
+class UserModelListAdapter extends TypeAdapter<UserModelList> {
+  @override
+  final int typeId = 4;
+
+  @override
+  UserModelList read(BinaryReader reader) {
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    };
+    return UserModelList(
+      users: (fields[1] as List).cast<UserModel>(),
+    );
+  }
+
+  @override
+  void write(BinaryWriter writer, UserModelList obj) {
+    writer
+      ..writeByte(1)
+      ..writeByte(1)
+      ..write(obj.users);
+  }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserModelListAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
+}

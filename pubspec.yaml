@@ -18,11 +18,10 @@ dependencies:
   gap: ^3.0.1
   cached_network_image: ^3.3.0
   shimmer: ^3.0.0
-  url_launcher: ^6.2.5
   permission_handler: ^11.3.0
   internet_connection_checker: ^1.0.0+1
   http: ^1.2.2
-  maps_launcher: ^2.2.1
+  map_launcher: ^3.5.0
 
 dev_dependencies:
   flutter_test:

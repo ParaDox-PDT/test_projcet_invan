@@ -8,18 +8,18 @@ final class LocaleStorage {
   final Box<dynamic> box;
 
   /// SAVE AND GET USERS
-  Future<void> setUsers({required List<UserModel> users}) async {
+  Future<void> setUsers({required UserModelList users}) async {
     await box.put('users', users);
   }
 
-  List<UserModel>? getUsers() => box.get('users') ?? [];
+  UserModelList? getUsers() => box.get('users');
 
   /// SAVE AND GET POSTS
-  Future<void> setPosts({required List<PostModel> posts}) async {
+  Future<void> setPosts({required PostModelList posts}) async {
     await box.put('posts', posts);
   }
 
-  List<PostModel>? getPosts() => box.get('posts') ?? [];
+  PostModelList? getPosts() => box.get('posts');
 
   /// SAVE AND GET CURRENT USER
   Future<void> setCurrentUser({required UserModel? user}) async {
@@ -31,4 +31,6 @@ final class LocaleStorage {
 
 HiveInterface hiveRegister() => Hive
   ..registerAdapter(UserModelAdapter())
+  ..registerAdapter(PostModelListAdapter())
+  ..registerAdapter(UserModelListAdapter())
   ..registerAdapter(PostModelAdapter());

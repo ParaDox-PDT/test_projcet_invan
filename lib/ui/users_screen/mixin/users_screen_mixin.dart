@@ -7,11 +7,6 @@ mixin UserScreenMixin on State<UsersScreen> {
     usersBloc = UsersBloc()..add(UsersGetEvent());
   }
 
-  void _openMap(
-      {required String lat, required String long,}) async {
-    MapsLauncher.launchCoordinates(double.parse(lat), double.parse(long));
-  }
-
   @override
   void initState() {
     _init();
