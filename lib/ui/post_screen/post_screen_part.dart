@@ -5,6 +5,7 @@ import 'package:test_projcet_invan/bloc/post_bloc/post_bloc.dart';
 import 'package:test_projcet_invan/data/models/bloc_status.dart';
 import 'package:test_projcet_invan/data/models/photo_model/photo_model.dart';
 import 'package:test_projcet_invan/data/models/post_model/post_model.dart';
+import 'package:test_projcet_invan/ui/app_routes.dart';
 
 part 'post_screen.dart';
 part 'mixin/post_screen_mixin.dart';

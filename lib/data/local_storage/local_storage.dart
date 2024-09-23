@@ -27,6 +27,13 @@ final class LocaleStorage {
   }
 
   UserModel? getCurrentUser() => box.get('currentUser');
+
+  /// SAVE AND GET COMMENTS PAGE
+  Future<void> setCommentsPage({required int page}) async {
+    await box.put('commentsPage', page);
+  }
+
+  int? getCommentsPage() => box.get('commentsPage');
 }
 
 HiveInterface hiveRegister() => Hive

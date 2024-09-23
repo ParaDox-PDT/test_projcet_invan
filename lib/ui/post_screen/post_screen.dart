@@ -27,10 +27,14 @@ class _PostScreenState extends State<PostScreen> with PostScreenMixin {
               itemBuilder: (context, index) {
                 PostModel postModel = state.posts[index];
                 PhotoModel? photoModel;
-                if(state.photos.isNotEmpty){
+                if (state.photos.isNotEmpty) {
                   photoModel = state.photos[index];
                 }
                 return ListTile(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(RouteNames.postDetail,
+                        arguments: postModel.id);
+                  },
                   leading: CachedNetworkImage(
                     imageUrl: photoModel?.url ?? '',
                     width: 50,
