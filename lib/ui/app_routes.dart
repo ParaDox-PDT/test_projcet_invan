@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_projcet_invan/ui/auth_screen/auth_screen_part.dart';
-import 'package:test_projcet_invan/ui/home_screen/home_screen.dart';
 
+import 'home_screen/home_screen_part.dart';
 import 'splash_screen/splash_screen_part.dart';
 
 

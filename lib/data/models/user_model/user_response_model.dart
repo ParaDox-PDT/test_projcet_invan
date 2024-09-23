@@ -17,7 +17,7 @@ class UserResponseModel {
   final String? name;
   final String? username;
   final String? email;
-  final UserResponseGeoModel address;
+  final UserResponseAddressModel address;
   final String? phone;
   final String? website;
   final UserResponseCompanyModel company;
@@ -28,7 +28,7 @@ class UserResponseModel {
         name: json["name"] ?? '',
         username: json["username"] ?? '',
         email: json["email"] ?? '',
-        address: UserResponseGeoModel.fromJson(json["address"]),
+        address: UserResponseAddressModel.fromJson(json["address"]),
         phone: json["phone"] ?? '',
         website: json["website"] ?? '',
         company: UserResponseCompanyModel.fromJson(json["company"]),

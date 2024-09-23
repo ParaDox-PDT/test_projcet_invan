@@ -25,7 +25,7 @@ class ApiService {
     }
   }
 
-  Future<UniversalData> getPhotos({
+  Future<List<PhotoModel>> getPhotos({
     required int page,
     required int limit,
   }) async {
@@ -36,18 +36,16 @@ class ApiService {
     try {
       final response = await http.get(uri);
 
-      return UniversalData(
-        data: (jsonDecode(response.body) as List?)
-                ?.map((e) => PhotoModel.fromJson(e))
-                .toList() ??
-            [],
-      );
+      return (jsonDecode(response.body) as List?)
+              ?.map((e) => PhotoModel.fromJson(e))
+              .toList() ??
+          [];
     } catch (e) {
-      return UniversalData(error: e.toString());
+      return [];
     }
   }
 
-  Future<UniversalData> getComments({
+  Future<List<CommentModel>> getComments({
     required int page,
     required int limit,
   }) async {
@@ -60,30 +58,26 @@ class ApiService {
       http.Response response = await http.get(
         uri,
       );
-      return UniversalData(
-        data: (jsonDecode(response.body) as List?)
-                ?.map((e) => CommentModel.fromJson(e))
-                .toList() ??
-            [],
-      );
+      return (jsonDecode(response.body) as List?)
+              ?.map((e) => CommentModel.fromJson(e))
+              .toList() ??
+          [];
     } catch (error) {
-      return UniversalData(error: error.toString());
+      return [];
     }
   }
 
-  Future<UniversalData> getUsers() async {
+  Future<List<UserResponseModel>> getUsers() async {
     Uri uri = Uri.https(baseUrl, "/users");
 
     try {
       http.Response response = await http.get(uri);
-      return UniversalData(
-        data: (jsonDecode(response.body) as List?)
-                ?.map((e) => UserResponseModel.fromJson(e))
-                .toList() ??
-            [],
-      );
+      return (jsonDecode(response.body) as List?)
+              ?.map((e) => UserResponseModel.fromJson(e))
+              .toList() ??
+          [];
     } catch (error) {
-      return UniversalData(error: error.toString());
+      return [];
     }
   }
 }
