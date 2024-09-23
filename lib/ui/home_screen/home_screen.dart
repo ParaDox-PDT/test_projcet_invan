@@ -20,9 +20,8 @@ class _HomeScreenState extends State<HomeScreen> with HomeScreenMixin {
         buildWhen: (p, c) => p != c,
         builder: (context, state) {
           return IndexedStack(
-            children: [
-              screens[state.screenIndex],
-            ],
+            index: state.screenIndex,
+            children: screens,
           );
         },
       ),

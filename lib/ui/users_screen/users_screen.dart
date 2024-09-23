@@ -34,9 +34,7 @@ class _UsersScreenState extends State<UsersScreen> with UserScreenMixin {
                   title: Text(user.name ?? ''),
                   subtitle: Text(user.username ?? ''),
                   trailing: TextButton(
-                    onPressed: () {
-
-                    },
+                    onPressed: () {},
                     child:
                         Text('${user.address.geo.lat},${user.address.geo.lng}'),
                   ),

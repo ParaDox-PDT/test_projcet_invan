@@ -21,7 +21,6 @@ dependencies:
   permission_handler: ^11.3.0
   internet_connection_checker: ^1.0.0+1
   http: ^1.2.2
-  map_launcher: ^3.5.0
 
 dev_dependencies:
   flutter_test:

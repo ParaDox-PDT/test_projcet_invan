@@ -38,8 +38,8 @@ class _PostScreenState extends State<PostScreen> with PostScreenMixin {
                       Icons.error,
                     ),
                   ),
-                  title: Text(postModel.title),
-                  subtitle: Text(postModel.body),
+                  title: Text('TITLE : ${postModel.title}'),
+                  subtitle: Text('DESCRIPTION: ${postModel.body}'),
                 );
               },
               itemCount: 100,
