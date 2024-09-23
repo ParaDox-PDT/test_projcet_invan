@@ -10,6 +10,7 @@ part 'profile_state.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc() : super(const ProfileState()) {
     on<ProfileGetInfoEvent>(_onGetInfo);
+    on<ProfileLogoutEvent>(_onLogOut);
   }
 
   void _onGetInfo(ProfileGetInfoEvent event, Emitter<ProfileState> emit) {
@@ -19,5 +20,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       currentUser: currentUser,
       users: users?.users ?? [],
     ));
+  }
+
+  void _onLogOut(ProfileLogoutEvent event, Emitter<ProfileState> emit) {
+    localeStorage.setCurrentUser(user: null);
+    emit(state.copyWith(currentUser: null));
   }
 }

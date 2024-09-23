@@ -21,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> with ProfileScreenMixin {
           return Column(
             children: [
               ListTile(
-                leading: Icon(Icons.person),
+                leading: const Icon(Icons.person),
                 title: Text(
                     'Fullname : ${state.currentUser?.lastname} ${state.currentUser?.name}'),
                 subtitle: Text('Email : ${state.currentUser?.email}'),
@@ -49,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> with ProfileScreenMixin {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          sl<AuthBloc>().add(AuthLogOutEvent());
+          profileBloc.add(const ProfileLogoutEvent());
           Navigator.of(context).pushReplacementNamed(RouteNames.auth);
         },
         child: const Icon(Icons.logout),
